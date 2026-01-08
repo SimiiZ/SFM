@@ -8,7 +8,7 @@ Official PyTorch implementation of the paper Structural Feature Modulation for D
 
 
 ## Highlights
-Day-night cross-domain object re-identification presents significant challenges due to severe illumination-induced domain gaps. Unlike conventional attention mechanisms that suffer from limited dimensional coverage and rely on single-type normalization strategies, we propose a structural feature modulation (SFM) approach that operates from a modulation perspective. Our SFM approach incorporates a gated batch-layer normalization strategy within the modulation architecture, resulting in the construction of a gated normalization-based modulation (GNM) module. This module effectively leverages the complementary advantages of both batch normalization and layer normalization to balance intra-domain discriminability and cross-domain generalization. Furthermore, we develop a multi-granularity modulation (MGM) module that recalibrates features across both edge-granularity and area-granularity pathways, enabling comprehensive structural modulation. Extensive experiments on DN-348 and LLCM benchmark datasets demonstrate that our SFM approach consistently outperforms state-of-the-art approaches.
+Day-night cross-domain object re-identification presents significant challenges due to severe illumination-induced domain gaps. Unlike conventional attention mechanisms that suffer from limited dimensional coverage and rely on single-type normalization strategies, we propose a structural feature modulation (SFM) approach that operates from a modulation perspective. Our SFM approach incorporates a gated batch-layer normalization strategy within the modulation architecture, resulting in the construction of a gated normalization-based modulation (GNM) module. This module effectively leverages the complementary advantages of both batch normalization and layer normalization to balance intra-domain discriminability and cross-domain generalization. Furthermore, we develop a multi-granularity modulation (MGM) module that recalibrates features across both edge-granularity and area-granularity pathways, enabling comprehensive structural modulation. Extensive experiments on DN-348 and LLCM benchmark datasets demonstrate that our SFM approach consistently outperforms state-of-the-art approaches.![Overview](images/overview.png)
 
 
 ## Usage
@@ -46,4 +46,5 @@ python llcm_test_simi.py --mode 'v2t' --resume 'model_path' --gpu 1 --dataset ll
 
 
 ## Contact
-If you have any question, please feel free to contact us. E-mail: [SimiTuT@hqu.edu.cn.](mailto:SimiTuT@hqu.edu.cn.).
+If you have any question, please feel free to contact us. E-mail: [SimiTuT@hqu.edu.cn.](mailto:SimiTuT@hqu.edu.cn.), [jqzhu@hqu.edu.cn.](mailto:jqzhu@hqu.edu.cn.)
+
