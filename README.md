@@ -8,7 +8,7 @@ Official PyTorch implementation of the paper Structural Feature Modulation for D
 
 
 ## Highlights
-Day-night cross-domain object re-identification presents significant challenges due to severe illumination-induced domain gaps. Unlike conventional attention mechanisms that suffer from limited dimensional coverage and rely on single-type normalization strategies, we propose a structural feature modulation (SFM) approach that operates from a modulation perspective. Our SFM approach incorporates a gated batch-layer normalization strategy within the modulation architecture, resulting in the construction of a gated normalization-based modulation (GNM) module. This module effectively leverages the complementary advantages of both batch normalization and layer normalization to balance intra-domain discriminability and cross-domain generalization. Furthermore, we develop a multi-granularity modulation (MGM) module that recalibrates features across both edge-granularity and area-granularity pathways, enabling comprehensive structural modulation. Extensive experiments on DN-348 and LLCM benchmark datasets demonstrate that our SFM approach consistently outperforms state-of-the-art approaches.
+Day-night cross-domain object re-identification presents significant challenges due to severe illumination-induced domain gaps. Unlike conventional attention mechanisms that suffer from limited dimensional coverage and rely on single-type normalization strategies, we propose a structural feature modulation (SFM) approach that operates from a modulation perspective. Our SFM approach incorporates a gated batch-layer normalization strategy within the modulation architecture, resulting in the construction of a gated normalization-based modulation (GNM) module. This module effectively leverages the complementary advantages of both batch normalization and layer normalization to balance intra-domain discriminability and cross-domain generalization. Furthermore, we develop a multi-granularity modulation (MGM) module that recalibrates features across both edge-granularity and area-granularity pathways, enabling comprehensive structural modulation. Extensive experiments on DN348 and LLCM benchmark datasets demonstrate that our SFM approach consistently outperforms state-of-the-art approaches.
 
 ![Overview](images/overview.png)
 
@@ -75,7 +75,7 @@ The LLCM dataset can be downloaded from [here](https://github.com/ZYK100/LLCM/tr
 ### Training
    Train a model by
   ```bash
-# Train on DN-348 dataset
+# Train on DN348 dataset
 python dn348_train_simi.py --dataset dn348 --gpu 0
 # Train on LLCM dataset
 python llcm_train_simi.py --dataset llcm --gpu 0
@@ -87,7 +87,7 @@ python llcm_train_simi.py --dataset llcm --gpu 0
   ```bash
 # Test on DN348 dataset  (Day-to-Night)
 python dn348_test_simi.py --mode 'v2t' --resume 'model_path' --gpu 0 --dataset dn348
-# Test on DN-348 dataset  (Night-to-Day)
+# Test on DN348 dataset  (Night-to-Day)
 python dn348_test_simi.py --mode 't2v' --resume 'model_path' --gpu 0 --dataset dn348
 
 # Test on LLCM dataset (Visible-to-Infrared)
@@ -98,7 +98,7 @@ python llcm_test_simi.py --mode 't2v' --resume 'model_path' --gpu 0 --dataset ll
 ## Acknowledgements
 This work is built upon several excellent open-source projects. We would like to thank the authors for their contributions.
 
-**DN-348:**
+**DN348:**
 ```bibtex
 @inproceedings{dn348,
   title={Day-Night Cross-domain Vehicle Re-identification},
