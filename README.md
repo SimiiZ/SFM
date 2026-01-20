@@ -27,6 +27,7 @@ easydict
 
 ### Prepare Datasets
 Download the datasets and organize them as follows:
+```
 |-- your dataset root dir/
 |   |-- <DN348>/
 |       |-- day
@@ -66,8 +67,9 @@ Download the datasets and organize them as follows:
 |            |-- cam1
 |            |-- cam2
 |            |-- ... (cam1-cam9)
-
+```
 The DN348 dataset can be downloaded from [here](https://github.com/chenjingong/DN-ReID/tree/main/data_path)
+
 The LLCM dataset can be downloaded from [here](https://github.com/ZYK100/LLCM/tree/main/LLCM%20Dataset%20Agreement)
 
 
