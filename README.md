@@ -68,9 +68,8 @@ Download the datasets and organize them as follows:
 |            |-- cam2
 |            |-- ... (cam1-cam9)
 ```
-The DN348 dataset can be downloaded from [here](https://github.com/chenjingong/DN-ReID/tree/main/data_path)
-
-The LLCM dataset can be downloaded from [here](https://github.com/ZYK100/LLCM/tree/main/LLCM%20Dataset%20Agreement)
+The DN348 dataset can be downloaded from [here](https://github.com/chenjingong/DN-ReID/tree/main/data_path).
+The LLCM dataset can be downloaded from [here](https://github.com/ZYK100/LLCM/tree/main/LLCM%20Dataset%20Agreement).
 
 
 ### Training
@@ -86,7 +85,7 @@ python llcm_train_simi.py --dataset llcm --gpu 0
 
  Test a model on DN348 or LLCM dataset by 
   ```bash
-# Test on DN-348 dataset  (Day-to-Night)
+# Test on DN348 dataset  (Day-to-Night)
 python dn348_test_simi.py --mode 'v2t' --resume 'model_path' --gpu 0 --dataset dn348
 # Test on DN-348 dataset  (Night-to-Day)
 python dn348_test_simi.py --mode 't2v' --resume 'model_path' --gpu 0 --dataset dn348
