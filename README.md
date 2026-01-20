@@ -23,7 +23,6 @@ Torchvision 0.20.1
 CUDA 12.1
 prettytable
 easydict
-
 ```
 
 ### Prepare Datasets
@@ -35,7 +34,10 @@ The DN348 dataset can be downloaded from [here](https://github.com/chenjingong/D
 ### Training
    Train a model by
   ```bash
-python llcm_train_simi.py --dataset llcm  --gpu 1
+# Train on LLCM dataset
+python llcm_train_simi.py --dataset llcm --gpu 0
+# Train on DN-348 dataset
+python llcm_train_simi.py --dataset dn348 --gpu 0
 ```
 
 
@@ -43,9 +45,34 @@ python llcm_train_simi.py --dataset llcm  --gpu 1
 
  Test a model on dn348 or dnwild dataset by 
   ```bash
-python llcm_test_simi.py --mode 'v2t' --resume 'model_path' --gpu 1 --dataset llcm
-```
+# Test on LLCM dataset (Visible-to-Infrared)
+python llcm_test_simi.py --mode 'v2t' --resume 'model_path' --gpu 0 --dataset llcm
+# Test on LLCM dataset (Infrared-to-Visible)
+python llcm_test_simi.py --mode 't2v' --resume 'model_path' --gpu 0 --dataset llcm
 
+# Test on DN-348 dataset  (Day-to-Night)
+python llcm_test_simi.py --mode 'v2t' --resume 'model_path' --gpu 0 --dataset dn348
+# Test on DN-348 dataset  (Night-to-Day)
+python llcm_test_simi.py --mode 't2v' --resume 'model_path' --gpu 0 --dataset dn348
+```
+## Acknowledgements
+This work is built upon several excellent open-source projects. We would like to thank the authors for their contributions.
+
+@inproceedings{deen,
+  title={Diverse Embedding Expansion Network and Low-Light Cross-Modality Benchmark for Visible-Infrared Person Re-Identification},
+  author={Zhang, Yukang and Wang, Hanzi},
+  booktitle={IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={2153--2162},
+  year={2023}
+}
+
+@inproceedings{dn348,
+  title={Day-Night Cross-domain Vehicle Re-identification},
+  author={Li, Hongchao and Chen, Jingong and Zheng, Aihua and Wu, Yong and Luo, Yonglong},
+  booktitle={IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={12626--12635},
+  year={2024}
+}
 
 ## Contact
 If you have any question, please feel free to contact us. E-mail: [SimiTuT@hqu.edu.cn.](mailto:SimiTuT@hqu.edu.cn.), [jqzhu@hqu.edu.cn.](mailto:jqzhu@hqu.edu.cn.)
