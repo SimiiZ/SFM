@@ -77,7 +77,7 @@ The LLCM dataset can be downloaded from [here](https://github.com/ZYK100/LLCM/tr
    Train a model by
   ```bash
 # Train on DN-348 dataset
-python llcm_train_simi.py --dataset dn348 --gpu 0
+python dn348_train_simi.py --dataset dn348 --gpu 0
 # Train on LLCM dataset
 python llcm_train_simi.py --dataset llcm --gpu 0
 ```
@@ -87,9 +87,9 @@ python llcm_train_simi.py --dataset llcm --gpu 0
  Test a model on DN348 or LLCM dataset by 
   ```bash
 # Test on DN-348 dataset  (Day-to-Night)
-python llcm_test_simi.py --mode 'v2t' --resume 'model_path' --gpu 0 --dataset dn348
+python dn348_test_simi.py --mode 'v2t' --resume 'model_path' --gpu 0 --dataset dn348
 # Test on DN-348 dataset  (Night-to-Day)
-python llcm_test_simi.py --mode 't2v' --resume 'model_path' --gpu 0 --dataset dn348
+python dn348_test_simi.py --mode 't2v' --resume 'model_path' --gpu 0 --dataset dn348
 
 # Test on LLCM dataset (Visible-to-Infrared)
 python llcm_test_simi.py --mode 'v2t' --resume 'model_path' --gpu 0 --dataset llcm
