@@ -26,8 +26,46 @@ easydict
 ```
 
 ### Prepare Datasets
+Download the datasets and organize them as follows:
+data/
+├── LLCM/
+│   ├── idx/                    # Index files
+│   │   ├── test_id.txt
+│   │   ├── test_nir.txt
+│   │   ├── test_vis.txt
+│   │   ├── train_nir.txt
+│   │   └── train_vis.txt
+│   ├── nir/                    # NIR training images (by person ID)
+│   │   ├── 0000/
+│   │   ├── 0001/
+│   │   └── ...
+│   ├── vis/                    # Visible training images (by person ID)
+│   │   ├── 0000/
+│   │   ├── 0001/
+│   │   └── ...
+│   ├── test_nir/               # NIR test images (by camera)
+│   │   ├── cam1/
+│   │   ├── cam2/
+│   │   └── ... (cam1-cam9)
+│   └── test_vis/               # Visible test images (by camera)
+│       ├── cam1/
+│       ├── cam2/
+│       └── ... (cam1-cam9)
+└── DN348/
+    ├── day/                    # Daytime images (by vehicle ID)
+    │   ├── 00634/
+    │   ├── 00635/
+    │   └── ...
+    ├── night/                  # Nighttime images (by vehicle ID)
+    │   ├── 00634/
+    │   ├── 00635/
+    │   └── ...
+    └── train_test_split/       # Train/test split files
+        ├── test_list_day.txt
+        ├── test_list_night.txt
+        ├── train_list_day.txt
+        └── train_list_night.txt
 The LLCM dataset can be downloaded from [here](https://github.com/ZYK100/LLCM/tree/main/LLCM%20Dataset%20Agreement)
-
 The DN348 dataset can be downloaded from [here](https://github.com/chenjingong/DN-ReID/tree/main/data_path)
 
 
@@ -57,7 +95,8 @@ python llcm_test_simi.py --mode 't2v' --resume 'model_path' --gpu 0 --dataset dn
 ```
 ## Acknowledgements
 This work is built upon several excellent open-source projects. We would like to thank the authors for their contributions.
-
+**DEEN:**
+```bibtex
 @inproceedings{deen,
   title={Diverse Embedding Expansion Network and Low-Light Cross-Modality Benchmark for Visible-Infrared Person Re-Identification},
   author={Zhang, Yukang and Wang, Hanzi},
@@ -65,7 +104,9 @@ This work is built upon several excellent open-source projects. We would like to
   pages={2153--2162},
   year={2023}
 }
-
+```
+**DN-348:**
+```bibtex
 @inproceedings{dn348,
   title={Day-Night Cross-domain Vehicle Re-identification},
   author={Li, Hongchao and Chen, Jingong and Zheng, Aihua and Wu, Yong and Luo, Yonglong},
@@ -73,6 +114,7 @@ This work is built upon several excellent open-source projects. We would like to
   pages={12626--12635},
   year={2024}
 }
+```
 
 ## Contact
 If you have any question, please feel free to contact us. E-mail: [SimiTuT@hqu.edu.cn.](mailto:SimiTuT@hqu.edu.cn.), [jqzhu@hqu.edu.cn.](mailto:jqzhu@hqu.edu.cn.)
