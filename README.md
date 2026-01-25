@@ -14,24 +14,25 @@ Day-night cross-domain object re-identification presents significant challenges 
 
 ## Results
 
-**Pretrained Models** 
+### 1. Pretrained Models
 
-**DN348:** 
+**DN348:**
 
 | Mode | mAP(%) | Rank1(%) | Download |
 |------|--------|----------|----------|
-| Night-to-Day | 50.31 | 83.43 | [百度网盘](your_link) |
-| Day-to-Night | 49.12 | 70.94 | [百度网盘](your_link) |
+| Night-to-Day | **50.31** | **83.43** | [百度网盘](https://pan.baidu.com/s/1uKl10HHGyxdtvaWRvJS1wA) (提取码: **y4x4**) |
+| Day-to-Night | **49.12** | **70.94** | [百度网盘](https://pan.baidu.com/s/1uKl10HHGyxdtvaWRvJS1wA) (提取码: **y4x4**) |
 
 **LLCM:**
 
 | Mode | mAP(%) | Rank1(%) | Download |
 |------|--------|----------|----------|
-| Infrared-to-Visible | 64.78 | 57.91 | [[百度网盘](your_link) |
-| Visible-to-Infrared | 68.55 | 66.01 | [[百度网盘](your_link) |
+| Infrared-to-Visible | **64.78** | **57.91** | [百度网盘](https://pan.baidu.com/s/1fNavwh54QGWc1fZ_vlI4IQ) (提取码: **bn96**) |
+| Visible-to-Infrared | **68.55** | **66.01** | [百度网盘](https://pan.baidu.com/s/1fNavwh54QGWc1fZ_vlI4IQ) (提取码: **bn96**) |
 
 
-### Computational Complexity Comparison on the DN-348 datasets.
+
+### 2.Computational Complexity Comparison on the DN-348 datasets.
 
 | Method | Night-to-Day mAP (%) | Night-to-Day Rank-1 (%) | Day-to-Night mAP (%) | Day-to-Night Rank-1 (%) | Params (M) | FLOPs (G) |
 |--------|----------------------|--------------------------|----------------------|--------------------------|------------|-----------|
@@ -42,9 +43,8 @@ Day-night cross-domain object re-identification presents significant challenges 
 | [DEEN](https://github.com/ZYK100/LLCM) | 47.00 | 81.70 | 46.60 | 68.20 | 88.64 | 23.68 |
 | [PDM](https://github.com/mmunhappy/ICASSP2025-PDM) | 47.80 | 82.50 | 47.20 | 68.30 | 93.83 | 23.70 |
 | **SFM (Ours)** | **50.31** | **83.43** | **49.12** | **70.94** | **29.89** | **8.49** |
-|
 
-### Inference Time and Memory Consumption on the DN-348 datasets.
+### 3.Inference Time and Memory Consumption on the DN-348 datasets.
 <p align="center">
   <img src="images/time_gpu.png" width="45%" alt="GPU Inference Time">
   <img src="images/time_cpu.png" width="45%" alt="CPU Inference Time">
