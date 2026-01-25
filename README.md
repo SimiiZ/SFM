@@ -12,6 +12,53 @@ Day-night cross-domain object re-identification presents significant challenges 
 
 ![Overview](images/overview.png)
 
+## Results
+
+## Pretrained Models
+
+### DN-348
+
+| Mode | mAP(%) | Rank1(%) | Download |
+|------|--------|----------|----------|
+| Night-to-Day | 50.31 | 83.43 | [[百度网盘](your_link) |
+| Day-to-Night | 49.12 | 70.94 | [[百度网盘](your_link) |
+
+### LLCM
+
+| Mode | mAP(%) | Rank1(%) | Download |
+|------|--------|----------|----------|
+| Infrared-to-Visible | 64.78 | 57.91 | [[百度网盘](your_link) |
+| Visible-to-Infrared | 68.55 | 66.01 | [[百度网盘](your_link) |
+
+
+### Computational Complexity Comparison on the DN-348 datasets.
+
+| Method | Night-to-Day mAP(%) | Night-to-Day Rank1(%) | Day-to-Night mAP(%) | Day-to-Night Rank1(%) | Param(M) | FLOPs(G) |
+|--------|---------------------|----------------------|---------------------|----------------------|----------|----------|
+| Baseline | 45.66 | 82.91 | 44.42 | 68.91 | 23.92 | 8.14 |
+| DDAG | 42.30 | 75.30 | 44.00 | 66.60 | 93.16 | 16.42 |
+| PMT | 46.10 | 76.00 | 47.00 | 66.30 | 86.14 | 37.84 |
+| DNDM | 46.20 | 80.30 | 47.50 | 70.70 | 78.87 | 30.62 |
+| DEEN | 47.00 | 81.70 | 46.60 | 68.20 | 88.64 | 23.68 |
+| PDM | 47.80 | 82.50 | 47.20 | 68.30 | 93.83 | 23.70 |
+| **SFM (Ours)** | **50.31** | **83.43** | **49.12** | **70.94** | **29.89** | **8.49** |
+
+### Inference Time and Memory Consumption on the DN-348 datasets.
+<p align="center">
+  <img src="images/time_gpu.png" width="45%" alt="GPU Inference Time">
+  <img src="images/time_cpu.png" width="45%" alt="CPU Inference Time">
+</p>
+<p align="center">
+  <b>Figure:</b> Average inference time across different batch sizes on the DN-348 dataset for GPU (left) and CPU (right), measured over 100 repetitions. GPU is NVIDIA RTX 3090 and CPU is Intel Xeon Platinum 8269CY (52-core, 2.5GHz).
+</p>
+<p align="center">
+  <img src="images/memory_gpu.png" width="45%" alt="GPU Memory">
+  <img src="images/memory_cpu.png" width="45%" alt="CPU Memory">
+</p>
+<p align="center">
+  <b>Figure:</b> Peak memory consumption across different batch sizes on the DN-348 dataset for GPU (left) and CPU (right).
+</p>
+
 
 ## Usage
 ### Requirements
