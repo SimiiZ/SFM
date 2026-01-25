@@ -8,9 +8,56 @@ Official PyTorch implementation of the paper Structural Feature Modulation for D
 
 
 ## Highlights
-Day-night cross-domain object re-identification presents significant challenges due to severe illumination-induced domain gaps. Unlike conventional attention mechanisms that suffer from limited dimensional coverage and rely on single-type normalization strategies, we propose a structural feature modulation (SFM) approach that operates from a modulation perspective. Our SFM approach incorporates a gated batch-layer normalization strategy within the modulation architecture, resulting in the construction of a gated normalization-based modulation (GNM) module. This module effectively leverages the complementary advantages of both batch normalization and layer normalization to balance intra-domain discriminability and cross-domain generalization. Furthermore, we develop a multi-granularity modulation (MGM) module that recalibrates features across both edge-granularity and area-granularity pathways, enabling comprehensive structural modulation. Extensive experiments on DN-348 and LLCM benchmark datasets demonstrate that our SFM approach consistently outperforms state-of-the-art approaches.
+Day-night cross-domain object re-identification presents significant challenges due to severe illumination-induced domain gaps. Unlike conventional attention mechanisms that suffer from limited dimensional coverage and rely on single-type normalization strategies, we propose a structural feature modulation (SFM) approach that operates from a modulation perspective. Our SFM approach incorporates a gated batch-layer normalization strategy within the modulation architecture, resulting in the construction of a gated normalization-based modulation (GNM) module. This module effectively leverages the complementary advantages of both batch normalization and layer normalization to balance intra-domain discriminability and cross-domain generalization. Furthermore, we develop a multi-granularity modulation (MGM) module that recalibrates features across both edge-granularity and area-granularity pathways, enabling comprehensive structural modulation. Extensive experiments on DN348 and LLCM benchmark datasets demonstrate that our SFM approach consistently outperforms state-of-the-art approaches.
 
 ![Overview](images/overview.png)
+
+## Results
+
+## Pretrained Models
+
+### DN-348
+
+| Mode | mAP(%) | Rank1(%) | Download |
+|------|--------|----------|----------|
+| Night-to-Day | 50.31 | 83.43 | [[百度网盘](your_link) |
+| Day-to-Night | 49.12 | 70.94 | [[百度网盘](your_link) |
+
+### LLCM
+
+| Mode | mAP(%) | Rank1(%) | Download |
+|------|--------|----------|----------|
+| Infrared-to-Visible | 64.78 | 57.91 | [[百度网盘](your_link) |
+| Visible-to-Infrared | 68.55 | 66.01 | [[百度网盘](your_link) |
+
+
+### Computational Complexity Comparison on the DN-348 datasets.
+
+| Method | Night-to-Day mAP(%) | Night-to-Day Rank1(%) | Day-to-Night mAP(%) | Day-to-Night Rank1(%) | Param(M) | FLOPs(G) |
+|--------|---------------------|----------------------|---------------------|----------------------|----------|----------|
+| Baseline | 45.66 | 82.91 | 44.42 | 68.91 | 23.92 | 8.14 |
+| DDAG | 42.30 | 75.30 | 44.00 | 66.60 | 93.16 | 16.42 |
+| PMT | 46.10 | 76.00 | 47.00 | 66.30 | 86.14 | 37.84 |
+| DNDM | 46.20 | 80.30 | 47.50 | 70.70 | 78.87 | 30.62 |
+| DEEN | 47.00 | 81.70 | 46.60 | 68.20 | 88.64 | 23.68 |
+| PDM | 47.80 | 82.50 | 47.20 | 68.30 | 93.83 | 23.70 |
+| **SFM (Ours)** | **50.31** | **83.43** | **49.12** | **70.94** | **29.89** | **8.49** |
+
+### Inference Time and Memory Consumption on the DN-348 datasets.
+<p align="center">
+  <img src="images/time_gpu.png" width="45%" alt="GPU Inference Time">
+  <img src="images/time_cpu.png" width="45%" alt="CPU Inference Time">
+</p>
+<p align="center">
+  <b>Figure:</b> Average inference time across different batch sizes on the DN-348 dataset for GPU (left) and CPU (right), measured over 100 repetitions. GPU is NVIDIA RTX 3090 and CPU is Intel Xeon Platinum 8269CY (52-core, 2.5GHz).
+</p>
+<p align="center">
+  <img src="images/memory_gpu.png" width="45%" alt="GPU Memory">
+  <img src="images/memory_cpu.png" width="45%" alt="CPU Memory">
+</p>
+<p align="center">
+  <b>Figure:</b> Peak memory consumption across different batch sizes on the DN-348 dataset for GPU (left) and CPU (right).
+</p>
 
 
 ## Usage
@@ -23,29 +70,101 @@ Torchvision 0.20.1
 CUDA 12.1
 prettytable
 easydict
-
 ```
 
 ### Prepare Datasets
-The LLCM dataset can be downloaded from [here](https://github.com/ZYK100/LLCM/tree/main/LLCM%20Dataset%20Agreement)
-
-The DN348 dataset can be downloaded from [here](https://github.com/chenjingong/DN-ReID/tree/main/data_path)
+Download the datasets and organize them as follows:
+```
+|-- your dataset root dir/
+|   |-- <DN348>/
+|       |-- day
+|            |-- 00634
+|            |-- 00635
+|            |-- ...
+|       |-- night
+|            |-- 00634
+|            |-- 00635
+|            |-- ...
+|       |-- train_test_split
+|            |-- test_list_day.txt
+|            |-- test_list_night.txt
+|            |-- train_list_day.txt
+|            |-- train_list_night.txt
+|
+|   |-- <LLCM>/
+|       |-- idx
+|            |-- test_id.txt
+|            |-- test_nir.txt
+|            |-- test_vis.txt
+|            |-- train_nir.txt
+|            |-- train_vis.txt
+|       |-- nir
+|            |-- 0000
+|            |-- 0001
+|            |-- ...
+|       |-- vis
+|            |-- 0000
+|            |-- 0001
+|            |-- ...
+|       |-- test_nir
+|            |-- cam1
+|            |-- cam2
+|            |-- ... (cam1-cam9)
+|       |-- test_vis
+|            |-- cam1
+|            |-- cam2
+|            |-- ... (cam1-cam9)
+```
+The DN348 dataset can be downloaded from [here](https://github.com/chenjingong/DN-ReID/tree/main/data_path).
+The LLCM dataset can be downloaded from [here](https://github.com/ZYK100/LLCM/tree/main/LLCM%20Dataset%20Agreement).
 
 
 ### Training
    Train a model by
   ```bash
-python llcm_train_simi.py --dataset llcm  --gpu 1
+# Train on DN348 dataset
+python dn348_train_simi.py --dataset dn348 --gpu 0
+# Train on LLCM dataset
+python llcm_train_simi.py --dataset llcm --gpu 0
 ```
-
 
  ### Test
 
- Test a model on dn348 or dnwild dataset by 
+ Test a model on DN348 or LLCM dataset by 
   ```bash
-python llcm_test_simi.py --mode 'v2t' --resume 'model_path' --gpu 1 --dataset llcm
-```
+# Test on DN348 dataset  (Day-to-Night)
+python dn348_test_simi.py --mode 'v2t' --resume 'model_path' --gpu 0 --dataset dn348
+# Test on DN348 dataset  (Night-to-Day)
+python dn348_test_simi.py --mode 't2v' --resume 'model_path' --gpu 0 --dataset dn348
 
+# Test on LLCM dataset (Visible-to-Infrared)
+python llcm_test_simi.py --mode 'v2t' --resume 'model_path' --gpu 0 --dataset llcm
+# Test on LLCM dataset (Infrared-to-Visible)
+python llcm_test_simi.py --mode 't2v' --resume 'model_path' --gpu 0 --dataset llcm
+```
+## Acknowledgements
+This work is built upon several excellent open-source projects. We would like to thank the authors for their contributions.
+
+**DN348:**
+```bibtex
+@inproceedings{dn348,
+  title={Day-Night Cross-domain Vehicle Re-identification},
+  author={Li, Hongchao and Chen, Jingong and Zheng, Aihua and Wu, Yong and Luo, Yonglong},
+  booktitle={IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={12626--12635},
+  year={2024}
+}
+```
+**DEEN:**
+```bibtex
+@inproceedings{deen,
+  title={Diverse Embedding Expansion Network and Low-Light Cross-Modality Benchmark for Visible-Infrared Person Re-Identification},
+  author={Zhang, Yukang and Wang, Hanzi},
+  booktitle={IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={2153--2162},
+  year={2023}
+}
+```
 
 ## Contact
 If you have any question, please feel free to contact us. E-mail: [SimiTuT@hqu.edu.cn.](mailto:SimiTuT@hqu.edu.cn.), [jqzhu@hqu.edu.cn.](mailto:jqzhu@hqu.edu.cn.)
