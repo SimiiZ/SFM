@@ -60,6 +60,7 @@ Day-night cross-domain object re-identification presents significant challenges 
 <p align="center">
   <b>Figure:</b> Peak memory consumption across different batch sizes on the DN-348 dataset for GPU (left) and CPU (right).
 </p>
+*Note:* The computational complexity of other SOTA methods is evaluated using the scripts in the `complexity` directory.
 
 
 ## Usage
