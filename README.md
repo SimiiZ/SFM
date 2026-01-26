@@ -20,8 +20,8 @@ Day-night cross-domain object re-identification presents significant challenges 
 
 | Mode | mAP(%) | Rank1(%) | Download |
 |------|--------|----------|----------|
-| Night-to-Day | **50.31** | **83.43** | [百度网盘](https://pan.baidu.com/s/1uKl10HHGyxdtvaWRvJS1wA) (提取码: **y4x4**) · [Google Drive](https://drive.google.com/drive/folders/1_cJJyMv8y85UzMvv118Kc60JiJGPRB6i?usp=drive_link) |
-| Day-to-Night | **49.12** | **70.94** | [百度网盘](https://pan.baidu.com/s/1uKl10HHGyxdtvaWRvJS1wA) (提取码: **y4x4**) · [Google Drive](https://drive.google.com/drive/folders/1_cJJyMv8y85UzMvv118Kc60JiJGPRB6i?usp=drive_link) |
+| Night-to-Day | **50.31** | **83.43** | [百度网盘](https://pan.baidu.com/s/1uKl10HHGyxdtvaWRvJS1wA) (提取码: **y4x4**) | [Google Drive](https://drive.google.com/drive/folders/1_cJJyMv8y85UzMvv118Kc60JiJGPRB6i?usp=drive_link) |
+| Day-to-Night | **49.12** | **70.94** | [百度网盘](https://pan.baidu.com/s/1uKl10HHGyxdtvaWRvJS1wA) (提取码: **y4x4**) | [Google Drive](https://drive.google.com/drive/folders/1_cJJyMv8y85UzMvv118Kc60JiJGPRB6i?usp=drive_link) |
 
 **LLCM:**
 
