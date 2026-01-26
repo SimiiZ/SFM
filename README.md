@@ -20,15 +20,15 @@ Day-night cross-domain object re-identification presents significant challenges 
 
 | Mode | mAP(%) | Rank1(%) | Download |
 |------|--------|----------|----------|
-| Night-to-Day | **50.31** | **83.43** | [百度网盘](https://pan.baidu.com/s/1uKl10HHGyxdtvaWRvJS1wA) (提取码: **y4x4**) |
-| Day-to-Night | **49.12** | **70.94** | [百度网盘](https://pan.baidu.com/s/1uKl10HHGyxdtvaWRvJS1wA) (提取码: **y4x4**) |
+| Night-to-Day | **50.31** | **83.43** | [百度网盘](https://pan.baidu.com/s/1uKl10HHGyxdtvaWRvJS1wA) (提取码: **y4x4**) · [Google Drive](https://drive.google.com/drive/folders/1_cJJyMv8y85UzMvv118Kc60JiJGPRB6i?usp=drive_link) |
+| Day-to-Night | **49.12** | **70.94** | [百度网盘](https://pan.baidu.com/s/1uKl10HHGyxdtvaWRvJS1wA) (提取码: **y4x4**) · [Google Drive](https://drive.google.com/drive/folders/1_cJJyMv8y85UzMvv118Kc60JiJGPRB6i?usp=drive_link) |
 
 **LLCM:**
 
 | Mode | mAP(%) | Rank1(%) | Download |
 |------|--------|----------|----------|
-| Infrared-to-Visible | **64.78** | **57.91** | [百度网盘](https://pan.baidu.com/s/1fNavwh54QGWc1fZ_vlI4IQ) (提取码: **bn96**) |
-| Visible-to-Infrared | **68.55** | **66.01** | [百度网盘](https://pan.baidu.com/s/1fNavwh54QGWc1fZ_vlI4IQ) (提取码: **bn96**) |
+| Infrared-to-Visible | **64.78** | **57.91** | [百度网盘](https://pan.baidu.com/s/1fNavwh54QGWc1fZ_vlI4IQ) (提取码: **bn96**) · [Google Drive](https://drive.google.com/drive/folders/1DPIrNwFKBeijB-s_Sa_AD_k5Pn4fVEd5?usp=drive_link) |
+| Visible-to-Infrared | **68.55** | **66.01** | [百度网盘](https://pan.baidu.com/s/1fNavwh54QGWc1fZ_vlI4IQ) (提取码: **bn96**) · [Google Drive](https://drive.google.com/drive/folders/1DPIrNwFKBeijB-s_Sa_AD_k5Pn4fVEd5?usp=drive_link) |
 
 
 
