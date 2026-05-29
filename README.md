@@ -45,23 +45,6 @@ Day-night cross-domain object re-identification presents significant challenges 
 | [PDM](https://github.com/mmunhappy/ICASSP2025-PDM) | 47.80 | 82.50 | 47.20 | 68.30 | 93.83 | 23.70 |
 | **SFM (Ours)** | **50.31** | **83.43** | **49.12** | **70.94** | **29.89** | **8.49** |
 
-### 3.Inference Time and Memory Consumption on the DN-348 datasets.
-<p align="center">
-  <img src="images/time_gpu.png" width="45%" alt="GPU Inference Time">
-  <img src="images/time_cpu.png" width="45%" alt="CPU Inference Time">
-</p>
-<p align="center">
-  <b>Figure:</b> Average inference time across different batch sizes on the DN-348 dataset for GPU (left) and CPU (right), measured over 100 repetitions. GPU is NVIDIA RTX 3090 and CPU is Intel Xeon Platinum 8269CY (52-core, 2.5GHz).
-</p>
-<p align="center">
-  <img src="images/memory_gpu.png" width="45%" alt="GPU Memory">
-  <img src="images/memory_cpu.png" width="45%" alt="CPU Memory">
-</p>
-<p align="center">
-  <b>Figure:</b> Peak memory consumption across different batch sizes on the DN-348 dataset for GPU (left) and CPU (right).
-</p>
-*Note:* The computational complexity of other SOTA methods is evaluated using the scripts in the `complexity` directory.
-
 
 ## Usage
 ### Requirements
