@@ -14,7 +14,7 @@ Day-night cross-domain object re-identification presents significant challenges 
 
 ## Results
 
-### 1. Pretrained Models
+### Pretrained Models
 
 **DN348:**
 
@@ -30,20 +30,6 @@ Day-night cross-domain object re-identification presents significant challenges 
 | Infrared-to-Visible | **64.78** | **57.91** | [百度网盘](https://pan.baidu.com/s/1fNavwh54QGWc1fZ_vlI4IQ) (提取码: **bn96**) · [Google Drive](https://drive.google.com/drive/folders/1DPIrNwFKBeijB-s_Sa_AD_k5Pn4fVEd5?usp=drive_link) |
 | Visible-to-Infrared | **68.55** | **66.01** | [百度网盘](https://pan.baidu.com/s/1fNavwh54QGWc1fZ_vlI4IQ) (提取码: **bn96**) · [Google Drive](https://drive.google.com/drive/folders/1DPIrNwFKBeijB-s_Sa_AD_k5Pn4fVEd5?usp=drive_link) |
 
-
-
-
-### 2.Computational Complexity Comparison on the DN-348 datasets.
-
-| Method | Night-to-Day mAP (%) | Night-to-Day Rank-1 (%) | Day-to-Night mAP (%) | Day-to-Night Rank-1 (%) | Params (M) | FLOPs (G) |
-|--------|----------------------|--------------------------|----------------------|--------------------------|------------|-----------|
-| Baseline | 45.66 | 82.91 | 44.42 | 68.91 | 23.92 | 8.14 |
-| [DDAG](https://github.com/mangye16/DDAG) | 42.30 | 75.30 | 44.00 | 66.60 | 93.16 | 16.42 |
-| [PMT](https://github.com/hulu88/PMTDNDM) | 46.10 | 76.00 | 47.00 | 66.30 | 86.14 | 37.84 |
-| [DNDM](https://github.com/chenjingong/DN-ReID) | 46.20 | 80.30 | 47.50 | 70.70 | 78.87 | 30.62 |
-| [DEEN](https://github.com/ZYK100/LLCM) | 47.00 | 81.70 | 46.60 | 68.20 | 88.64 | 23.68 |
-| [PDM](https://github.com/mmunhappy/ICASSP2025-PDM) | 47.80 | 82.50 | 47.20 | 68.30 | 93.83 | 23.70 |
-| **SFM (Ours)** | **50.31** | **83.43** | **49.12** | **70.94** | **29.89** | **8.49** |
 
 
 ## Usage
